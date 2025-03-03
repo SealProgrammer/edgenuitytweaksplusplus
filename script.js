@@ -122,8 +122,24 @@
         if (document.getElementById("AutoAdvance.tickbox").checked) {
             if (document.getElementById("activity-title").innerText == "Quiz") {
             } else {
-                try {document.getElementsByClassName("footnav goRight")[0].click()} catch (TypeError) {}
-                try {window.frames[0].API.FrameChain.nextFrame()} catch (TypeError) {}
+                // try {document.getElementsByClassName("footnav goRight")[0].click()} catch (TypeError) {}
+                // try {window.frames[0].API.FrameChain.nextFrame()} catch (TypeError) {}
+                try {
+                    if (window.frames[0].API?.FrameChain?.framesStatus.length === window.frames[0].API.FrameChain.currentFrame) {
+                        console.log("Attempting to go to next frame...");
+                        document.querySelector(".goRight")?.click();
+                    }
+
+                    var w = window.frames[0].document;
+
+                    var vid = w.querySelector("video");
+
+                    if (vid.duration - vid.currentTime < 5.0) {
+                        window.frames[0].API.FrameChain.nextFrame();
+                    }
+
+
+                } catch {}
             }
         }
     }
