@@ -134,7 +134,11 @@
 
                     var vid = w.querySelector("video");
 
-                    if (vid.duration - vid.currentTime < 5.0) {
+                    if (w.getElementById("frameAudioControls").style.display == 'none') {
+                        if (vid.duration - vid.currentTime < 5.0) {
+                            window.frames[0].API.FrameChain.nextFrame();
+                        }
+                    } else {
                         window.frames[0].API.FrameChain.nextFrame();
                     }
 
