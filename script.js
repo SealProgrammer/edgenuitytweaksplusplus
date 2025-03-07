@@ -3,7 +3,7 @@
 // @namespace    https://sealsearch.net/
 // @version      1.3
 // @description  Adds tweaks to edgenuity, with bugfixes by seal.
-// @author       Gradyn Wursten, seal
+// @author       seal, Gradyn Wursten
 // @match        *://*.core.learn.edgenuity.com/*
 // @grant        none
 // ==/UserScript==
@@ -102,7 +102,7 @@
     document.getElementById("practiceconfig").appendChild(BuildMenuEntry("Guess thru Assignments", "Guesses thru assignments. This is highly discouraged", "guessassignments"))
     // window.copyright
     window.copyright = document.createElement("p")
-    window.copyright.innerHTML = "EdgenTweaks Version 1.2.9 by Gradyn Wursten (<a href='https://host.gradyn.com/edgentweaks/support.html'>Support the project!</a>)"
+    window.copyright.innerHTML = "Edgenuity Tweaks Plus Plus v1.0.1b"
     window.copyright.style.color = "gray"
     window.copyright.style.width = "100%"
     document.getElementById("tweaksmenu").append(window.copyright)
